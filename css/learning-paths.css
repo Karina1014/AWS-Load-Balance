@@ -1,0 +1,60 @@
+:root {
+	--main-padding-top: 100px;
+	--main-padding-bottom: 100px;
+}
+
+.main-title {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.courses {
+	position: relative;
+}
+
+.courses .container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 30px;
+}
+
+.courses .box {
+	box-shadow: 0 2px 15px rgba(0 0 0/ 10%);
+	background-color: white;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: transform .3s, box-shadow .3s;
+}
+
+.courses .box:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 2px 15px rgba(0 0 0/ 30%);
+}
+
+.courses .box img {
+	width: 100%;
+	max-width: 100%;
+}
+
+.courses .box .course-info {
+	padding: 20px;
+}
+
+.courses .box .course-info h3 {
+	margin: 0;
+	text-transform: capitalize;
+}
+
+.courses .box .course-info p {
+	margin-top: 20px;
+	color: #777;
+}
+
+.courses .box .enroll {
+	text-align: center;
+}
+.courses .box .enroll a {
+	color: #2196f3;
+	font-weight: bold;
+	font-size: 18px;
+}

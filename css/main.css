@@ -1,0 +1,142 @@
+:root {
+	--main-color: #2196f3;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+	
+.header {
+	position: relative;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.header .container {
+	width: 100%;
+	padding: 20px 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+} 
+
+.logo a {
+	text-decoration: none;
+	color: var(--main-color);
+	font-size: x-large;
+	font-weight: 600;
+	font-style: italic;
+}	
+	
+.navigation-bar {
+	display: flex;
+	align-items: center;
+}
+
+.navigation-bar a {
+	position: relative;
+	color: black;
+	font-size: larger;
+	font-weight: 600;
+	text-decoration: none;
+	cursor: pointer;
+	margin-left: 50px;
+}
+
+.navigation-bar a:hover {
+	color: blue;	
+}
+
+.navigation-bar a::after {
+	content: '';
+	width: 100%;
+	height: 3px;
+	position: absolute;
+	background: black;
+	border-radius: 5px;
+	left: 0;
+	bottom: -10px;
+	transform: scalex(0);
+	transition: transform .5s;
+}
+
+.navigation-bar a:hover:after {
+	transform: scalex(1);
+	background-color: blue;
+}
+.welcome {
+	text-align: center;
+}
+.welcome .container span {
+	color: var(--main-color);
+}
+.welcome .image {
+	margin-top: 20px;
+}
+.welcome .start-free-btn {
+	cursor: pointer;
+	background-color: var(--main-color);
+	height: 40px;
+	width: 120px;
+	outline: none;
+	border-radius: 40px;
+	font-style: italic;
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+	border: none;
+}
+.text h1 {
+	margin-bottom: 10px;
+}
+.text h2 {
+	margin-bottom: 50px;
+}
+
+.icons .container .icons-with-info img {
+	width: 50px;
+	height: 50px;
+}
+
+.icons .container ul {
+	padding: 20px 250px;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+	position: relative;
+	color: black;
+	font-size: larger;
+	font-weight: 600;
+	margin-left: 50px;	
+}
+
+.icons .container .image {
+	display: flex;
+	justify-content: center;
+}
+
+.icons .container .icons-with-info p {
+	text-align: center;
+	font-style: italic;
+}
+
+footer {
+	margin-left: 100px;
+	margin-top: 20px;
+	font-weight: 500;
+}
