@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mywebsite-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mywebsite
+  template:
+    metadata:
+      labels:
+        app: mywebsite
+    spec:
+      containers:
+      - name: mywebsite
+        image: mohamedabdelslam/deepopsacademywebsite:latest
+        ports:
+        - containerPort: 80
