@@ -1,0 +1,34 @@
+---
+- name: Build a Containerized App from the Deepops Academy Website and Store it in the Docker Hub
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Create a Directory to Clone the Repo in it
+      command:
+        cmd: mkdir -p /opt/docker/mywebsite
+
+    - name: Cloning the Github Repo
+      git:
+        repo: https://github.com/Mohamed-Abdelslam/Simple-Front-end-WebApp-.git
+        dest: /opt/docker/mywebsite
+
+    - name: Build the Docker Image
+      command:
+        chdir: /opt/docker/mywebsite
+        cmd: docker build -t mywebsite .
+
+    - name: Show Images After Build
+      shell: docker images
+      register: docker_images_output
+
+    - name: Display Docker Images Output
+      debug:
+        var: docker_images_output.stdout_lines
+
+    - name: Tag the New Image Before Pushing to the Docker Hub
+      command:
+        cmd: docker tag mywebsite mohamedabdelslam/deepopsacademywebsite:latest
+
+    - name: Push the Tagged Image to the Docker Hub
+      command:
+        cmd: docker push mohamedabdelslam/deepopsacademywebsite:latest
